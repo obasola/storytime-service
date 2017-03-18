@@ -20,7 +20,7 @@ public class StatusCodeListItem implements ListItem {
 		;
 
 		//TODO : Define here the attributes to be displayed as the label
-		this.label = statusCode.toString();
+		this.label = statusCode.getCode();
 	}
 
 	@Override

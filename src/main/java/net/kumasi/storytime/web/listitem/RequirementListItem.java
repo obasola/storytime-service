@@ -20,7 +20,7 @@ public class RequirementListItem implements ListItem {
 		;
 
 		//TODO : Define here the attributes to be displayed as the label
-		this.label = requirement.toString();
+		this.label = requirement.getTitle();
 	}
 
 	@Override

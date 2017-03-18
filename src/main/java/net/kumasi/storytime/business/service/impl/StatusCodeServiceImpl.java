@@ -58,7 +58,7 @@ public class StatusCodeServiceImpl implements StatusCodeService {
 
 	@Override
 	public StatusCode create(StatusCode statusCode) {
-		if(statusCodePersistence.load(statusCode.getId()) != null) {
+		if(statusCode.getId() != null && statusCodePersistence.load(statusCode.getId()) != null) {
 			throw new IllegalStateException("already.exists");
 		}
 		StatusCodeEntity statusCodeEntity = new StatusCodeEntity();

@@ -51,14 +51,14 @@ public class SpecificationTypeServiceImpl implements SpecificationTypeService {
 		return beans;
 	}
 
-	@Override
+	@Override 
 	public SpecificationType save(SpecificationType specificationType) {
 		return update(specificationType) ;
 	}
 
 	@Override
 	public SpecificationType create(SpecificationType specificationType) {
-		if(specificationTypePersistence.load(specificationType.getIdrequirementType()) != null) {
+		if(specificationType.getIdrequirementType() != null && specificationTypePersistence.load(specificationType.getIdrequirementType()) != null) {
 			throw new IllegalStateException("already.exists");
 		}
 		SpecificationTypeEntity specificationTypeEntity = new SpecificationTypeEntity();

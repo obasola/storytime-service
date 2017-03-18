@@ -20,7 +20,12 @@ public class CommentListItem implements ListItem {
 		;
 
 		//TODO : Define here the attributes to be displayed as the label
-		this.label = comment.toString();
+		if(comment.getDescription() != null && comment.getDescription().length() >= 15) {
+			this.label = comment.getDescription().substring(0,15);
+		}else{
+			this.label = comment.getDescription();
+		}
+		
 	}
 
 	@Override

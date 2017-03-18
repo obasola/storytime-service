@@ -59,7 +59,7 @@ public class RequirementServiceImpl implements RequirementService {
 
 	@Override
 	public Requirement create(Requirement requirement) {
-		if(requirementPersistence.load(requirement.getIdrequirement()) != null) {
+		if(requirement.getIdrequirement() != null && requirementPersistence.load(requirement.getIdrequirement()) != null) {
 			throw new IllegalStateException("already.exists");
 		}
 		RequirementEntity requirementEntity = new RequirementEntity();

@@ -21,7 +21,7 @@ public class RequirementSpecificationTypeListItem implements ListItem {
 		;
 
 		//TODO : Define here the attributes to be displayed as the label
-		this.label = requirementSpecificationType.toString();
+		this.label = requirementSpecificationType.getRequirementIdrequirement().toString();
 	}
 
 	@Override

@@ -58,7 +58,7 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public Person create(Person person) {
-		if(personPersistence.load(person.getIdperson()) != null) {
+		if(person.getIdperson() != null && personPersistence.load(person.getIdperson()) != null) {
 			throw new IllegalStateException("already.exists");
 		}
 		PersonEntity personEntity = new PersonEntity();

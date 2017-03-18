@@ -57,7 +57,7 @@ public class CommentServiceImpl implements CommentService {
 
 	@Override
 	public Comment create(Comment comment) {
-		if(commentPersistence.load(comment.getIdcomment()) != null) {
+		if(comment.getIdcomment() != null && commentPersistence.load(comment.getIdcomment()) != null) {
 			throw new IllegalStateException("already.exists");
 		}
 		CommentEntity commentEntity = new CommentEntity();
